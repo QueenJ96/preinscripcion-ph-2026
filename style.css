@@ -1,0 +1,257 @@
+body { font-family: sans-serif; background: #fff0f3; display: flex; flex-direction: column; align-items: center; }
+.hidden { display: none !important; }
+.step { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 90%; max-width: 500px; margin-top: 30px; }
+.grid-botones { display: flex; flex-direction: column; gap: 10px; }
+button { padding: 15px; border: none; border-radius: 10px; background: #ff85a2; color: white; font-weight: bold; cursor: pointer; margin-top: 10px; }
+.materia-box { border: 1px solid #ffcad4; padding: 10px; border-radius: 10px; margin-bottom: 10px; }
+label { display: block; margin: 8px 0; }
+select, input[type="text"] { width: 100%; padding: 8px; margin-top: 5px; }/* Violeta para regulares */
+
+/* Títulos */
+.titulo-principal {
+    text-align: center;
+    color: #d85a7a;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+.subtitulo {
+    text-align: center;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de las 3 cajas */
+.contenedor-cajas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Para que en celus se apilen */
+    padding: 20px;
+}
+
+/* Estilo de cada caja individual */
+.caja-practica {
+    background: white;
+    border: 2px solid #ffcad4;
+    border-radius: 20px;
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Efecto al pasar el mouse (hover) */
+.caja-practica:hover {
+    transform: translateY(-10px); /* Sube un poquito */
+    box-shadow: 0 12px 20px rgba(255, 133, 162, 0.2);
+    border-color: #ff85a2;
+}
+
+.caja-practica h3 {
+    color: #ff85a2;
+    margin: 15px 0;
+}
+
+.caja-practica .icono {
+    font-size: 3rem;
+}
+
+.caja-practica p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Ajuste para que la sección ocupe más ancho en escritorio */
+#paso1.step {
+    max-width: 900px; /* La hacemos más ancha para que entren las 3 */
+}
+
+/* Contenedor principal del paso 2 */
+#paso2.step {
+    max-width: 1000px !important; /* Un poco más ancho para que entren las dos cajas */
+    width: 95%; /* Que ocupe casi todo el ancho disponible */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.contenedor-dos-columnas {
+    display: flex !important;
+    flex-direction: row;
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    justify-content: space-between;
+    flex-wrap: wrap; /* En el celu se ponen una abajo de la otra */
+    margin-top: 20px;
+}
+
+/* Estilo de las cajas de materias */
+.caja-materias {
+    background: #ffffff;
+    border-radius: 15px;
+    flex: 1 !important;
+    min-width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border-top: 5px solid; /* Le damos un borde de color arriba */
+}
+
+.bloque-aprobadas { border-top-color: #2d6a4f; } /* Verde */
+.bloque-regulares { border-top-color: #7251b5; } /* Violeta/Lila */
+
+.header-caja {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.header-caja h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+/* Estilo de la lista de materias */
+.lista-checks label {
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.lista-checks label:hover {
+    background: #f9f9f9;
+}
+
+/* Botonera de navegación */
+.acciones-paso2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.btn-volver {
+    background: #ccc !important;
+    flex: 1;
+}
+
+.btn-continuar {
+    background: #ff85a2 !important;
+    flex: 2;
+}
+
+/* Estilo general del formulario final */
+.formulario-final {
+    text-align: left;
+    padding: 10px;
+}
+
+.campo-grupo {
+    margin-bottom: 20px;
+}
+
+.campo-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Estilo para los inputs y selectores */
+input[type="text"], select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ffcad4;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #ff85a2;
+}
+
+/* Estilo para el check de prioridad */
+.prioridad-check {
+    background: #fff5f7;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px dashed #ff85a2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prioridad-check input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Botón de finalizar (El verde que tenías pero mejorado) */
+.btn-finalizar {
+    background-color: #2d6a4f !important;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(45, 106, 79, 0.2);
+}
+
+.btn-finalizar:hover {
+    background-color: #1b4332 !important;
+    transform: translateY(-2px);
+}
+
+.acciones-finales {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+/* Ancho específico para el paso 3 */
+#paso3.step {
+    max-width: 800px !important; /* Más ancho para que respire */
+    width: 95%;
+}
+
+/* Contenedor para poner inputs en fila */
+.fila-inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex-wrap: wrap; /* En celu se ponen uno abajo del otro */
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.fila-inputs .campo-grupo {
+    flex: 1;
+    min-width: 280px; /* Para que no se achiquen de más */
+}
+
+.campo-grupo input, .campo-grupo select {
+    margin-top: 5px;
+    box-sizing: border-box; /* Evita que el padding "infle" la caja */
+}
+
+/* Título interno para separar secciones del formulario */
+.separador-form {
+    border-bottom: 2px solid #ffcad4;
+    padding-bottom: 5px;
+    margin: 25px 0 15px 0;
+    color: #d85a7a;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

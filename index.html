@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción PH - Obstetricia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Inscripción Prácticas Hospitalarias</h1>
+    </header>
+
+    <main id="app">
+        <section id="paso1" class="step">
+         <h2 class="titulo-principal">Inscripción 2026</h2>
+         <p class="subtitulo">Seleccioná la práctica que te corresponde cursar:</p>
+    
+         <div class="contenedor-cajas">
+                <div class="caja-practica" onclick="seleccionarPH(1)">
+                    <div class="icono">🏥</div>
+                    <h3>Práctica Hospitalaria I</h3>
+                    <p>Ver requisitos y cupos</p>
+                </div>
+
+                <div class="caja-practica" onclick="seleccionarPH(2)">
+                    <div class="icono">🩺</div>
+                    <h3>Práctica Hospitalaria II</h3>
+                    <p>Ver requisitos y cupos</p>
+                </div>
+
+                <div class="caja-practica" onclick="seleccionarPH(3)">
+                    <div class="icono">👶</div>
+                    <h3>Práctica Hospitalaria III</h3>
+                    <p>Ver requisitos y cupos</p>
+                </div>
+         </div>
+        </section>
+
+        <section id="paso2" class="step hidden">
+            <h2 id="titulo-paso2" class="titulo-seccion">Verificación de Correlativas</h2>
+            <p class="instruccion">Marcá todas las materias según tu situación académica para avanzar.</p>
+    
+            <div class="contenedor-dos-columnas">
+                <div class="caja-materias bloque-aprobadas">
+                     <div class="header-caja">
+                         <span class="icono-check">✅</span>
+                         <h3>Finales Aprobados</h3>
+                     </div>
+                     <div id="grupo-aprobadas" class="lista-checks">
+                        </div>
+                </div>
+
+                <div class="caja-materias bloque-regulares">
+                    <div class="header-caja">
+                        <span class="icono-check">📚</span>
+                        <h3>Materias Regulares</h3>
+                    </div>
+                    <div id="grupo-regulares" class="lista-checks">
+                        </div>
+                </div>
+            </div>  
+   
+    <div class="acciones-paso2">
+        <button class="btn-volver" onclick="irAlPaso(1)">← Volver</button>
+        <button class="btn-continuar" onclick="validarMaterias()">Verificar y Continuar →</button>
+    </div>
+</section>
+
+        <section id="paso3" class="step hidden">
+            <h2 class="titulo-seccion">Tus Preferencias</h2>
+            <p class="subtitulo">Completá tus datos para que podamos evaluar las mejores opciones.</p>
+    
+            <div class="formulario-final">
+                <div class="separador-form">📍 Datos Personales</div>
+                <div class="fila-inputs">
+                    <div class="campo-grupo">
+                        <label for="nombre_completo">Nombre Completo:</label>
+                        <input type="text" id="nombre_completo" placeholder="Ej: Juana Pérez" required>
+                    </div>
+                    <div class="campo-grupo">
+                        <label for="localidad">Tu Localidad:</label>
+                        <input type="text" id="localidad" placeholder="Ej: Avellaneda, Berazategui (CABA: barrio)...">
+                    </div>
+                </div>
+
+                <div class="campo-grupo prioridad-check">
+                    <input type="checkbox" id="trabaja"> 
+                    <label for="trabaja"><strong>¿Trabajás actualmente?</strong></label>
+                </div>
+
+                <div class="separador-form">🏥 Elección de Hospitales</div>
+                <div class="fila-inputs">
+                    <div class="campo-grupo">
+                        <label>Prioridad 1:</label>
+                        <select id="hosp1"><option value="">Cargando hospitales...</option></select>
+                    </div>
+                    <div class="campo-grupo">
+                        <label>Prioridad 2:</label>
+                        <select id="hosp2"><option value="">Cargando hospitales...</option></select>
+                    </div>
+                    <div class="campo-grupo">
+                        <label>Prioridad 3:</label>
+                        <select id="hosp3"><option value="">Cargando hospitales...</option></select>
+                    </div>
+                </div>
+            </div>  
+
+        <div class="campo-grupo">
+            <label>Hospital al que NO podrías ir:</label>
+            <input type="text" id="hospital_no" placeholder="Ej: Hospital Gandulfo (por distancia)">
+        </div>
+        
+        <div class="acciones-finales">
+            <button class="btn-volver" onclick="irAlPaso(2)">← Volver</button>
+            <button class="btn-finalizar" onclick="finalizar()">Finalizar Inscripción ✨</button>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
